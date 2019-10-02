@@ -26,7 +26,7 @@ class ItemDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            if (it.containsKey(ARG_ITEM_ID)) {
+            if (it.containsKey(ARG_OBJECT)) {
                 // Load the dummy content specified by the fragment
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
@@ -54,8 +54,5 @@ class ItemDetailFragment : Fragment() {
          * represents.
          */
         const val ARG_OBJECT = "item_object"
-        const val ARG_ITEM_ID = "item_id"
-        const val ARG_POST = "post_object"
-
     }
 }

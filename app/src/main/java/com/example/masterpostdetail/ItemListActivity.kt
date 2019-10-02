@@ -40,7 +40,7 @@ class ItemListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_item_list)
 
         setSupportActionBar(toolbar)
-        toolbar.title = title
+        toolbar.title = "Lista aleatoria"
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -109,7 +109,6 @@ class ItemListActivity : AppCompatActivity() {
                     if (twoPane) {
                         val fragment = ItemDetailFragment().apply {
                             arguments = Bundle().apply {
-                                putString(ItemDetailFragment.ARG_ITEM_ID, item.id.toString())
                                 putSerializable(ItemDetailFragment.ARG_OBJECT, item)
                             }
                         }
@@ -119,8 +118,6 @@ class ItemListActivity : AppCompatActivity() {
                             .commit()
                     } else {
                         val intent = Intent(it.context, ItemDetailActivity::class.java).apply {
-                            putExtra(ItemDetailFragment.ARG_ITEM_ID, item.id)
-                            putExtra(ItemDetailFragment.ARG_POST, item.title)
                             putExtra(ItemDetailFragment.ARG_OBJECT, item)
                         }
                         it.context.startActivity(intent)
